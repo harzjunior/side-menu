@@ -1,0 +1,119 @@
+.navbar {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #f2f2f2;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+}
+
+.navbar-menu {
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  height: 90vh;
+  width: 20vw;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu ul li {
+  margin-bottom: 2rem;
+}
+
+.navbar-menu ul li a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu.open {
+  transform: translateX(0);
+}
+
+/* .navbar-hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  z-index: 100;
+}
+
+.navbar-hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+} */
+
+.navbar-hamburger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.navbar-hamburger::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background: green;
+  transform: translateY(-10px); /*shifts to the top */
+  transition: 0.5s;
+  box-shadow: 10px 7px red;
+}
+
+.navbar-hamburger::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background: green;
+  transform: translateY(10px); /*shifts to the bottom */
+  transition: 0.5s;
+  box-shadow: -10px -7px red;
+}
+
+.navbar-hamburger:hover::before {
+  box-shadow: 0px 10px red;
+  transition: 200ms;
+}
+
+.navbar-hamburger:hover::after {
+  box-shadow: 0px -10px red;
+  transition: 200ms;
+}
+
+.navbar-hamburger.toggle::before {
+  transform: translateY(-10px) rotate(45deg);
+  box-shadow: 0px 0px red;
+}
+
+.navbar-hamburger.toggle::after {
+  transform: translateY(-10px) rotate(-45deg);
+  box-shadow: 0px 0px red;
+}
